@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class MovimientoCierra : MonoBehaviour
+public class MovimientoSierra : MonoBehaviour
 {
+    // Sierra
+    [SerializeField] private GameObject sierra;
     // Objeto a crear
     [SerializeField] private GameObject crear;
     // Posicion inicial
-    [SerializeField] private Vector2 posicionInicial;
+    private Vector2 posicionInicial;
     // Posicion final
     [SerializeField] private Vector2 posicionFinal;
     // Distancia de movimiento
@@ -21,6 +23,7 @@ public class MovimientoCierra : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        posicionInicial = sierra.transform.position;
         // Si la posicion inicial y final estan definidas
         if (posicionInicial != null && posicionFinal != null)
         {
@@ -29,6 +32,7 @@ public class MovimientoCierra : MonoBehaviour
             // Si la distancia de movimiento es diferente de 0 y la cantidad de objetos es mayor a 0
             if (distanciaMovimiento != 0 && cantidadObjetos > 0)
             {
+                cantidadObjetos -= 1;
                 // Dividimos la distancia de movimiento entre la cantidad de objetos
                 float distancia = distanciaMovimiento / cantidadObjetos;
                 // Agregamos las posiciones donde crearemos objetos
@@ -38,6 +42,7 @@ public class MovimientoCierra : MonoBehaviour
                     posiciones.Add(pos_actual);
                     pos_actual += distancia;
                 }
+                posiciones.Add(posicionFinal.x);
             }
         }
     }
@@ -50,18 +55,20 @@ public class MovimientoCierra : MonoBehaviour
         {
             // Vamos a mover el objeto desde la posicion inicial a la final y luego de la final a la inicial
             float movimiento = Mathf.PingPong(Time.time, distanciaMovimiento) / distanciaMovimiento;
-            transform.position = Vector2.Lerp(posicionInicial, posicionFinal, movimiento);
+            sierra.transform.position = Vector2.Lerp(posicionInicial, posicionFinal, movimiento);
             // Revisar si estamos en una posicion para crear un objeto
             if (posiciones.Count > 0)
             {
-                float xActual = transform.position.x;
+                float xActual = sierra.transform.position.x;
                 float xObjetivo = posiciones[0];
                 // Si el objeto esta en la posicion objetivo y no se ha creado un objeto en esa posicion
                 if (Mathf.Abs(xActual - xObjetivo) < 0.01f && xObjetivo != ultimaPosicion)
                 {
                     // Creamos el objeto
-                    Vector3 posicionCreacion = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1);
-                    Instantiate(crear, posicionCreacion, Quaternion.identity);
+                    Vector3 posicionCreacion = new Vector3(sierra.transform.position.x, sierra.transform.position.y, sierra.transform.position.z - 1);
+                    GameObject nuevoObjeto = Instantiate(crear, posicionCreacion, Quaternion.identity);
+                    // Asignamos el padre
+                    nuevoObjeto.transform.SetParent(transform);
                     // Eliminamos la posicion de la lista
                     posiciones.RemoveAt(0);
                     // Actualizamos la ultima posicion
