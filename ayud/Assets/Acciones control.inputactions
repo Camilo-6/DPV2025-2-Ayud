@@ -25,12 +25,12 @@
                 },
                 {
                     "name": "Mover",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "b892d7c7-a21b-4194-be48-703088ac13d4",
-                    "expectedControlType": "",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -90,9 +90,9 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "1D Axis",
-                    "id": "799a7259-ea86-4797-9eb8-bf1486ccdfdb",
-                    "path": "1DAxis",
+                    "name": "WASD",
+                    "id": "955fe77b-c6fe-4556-865e-f6da65b021d7",
+                    "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -101,56 +101,45 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "dea7ca24-98d7-424d-9102-8f093328a393",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mover",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "919d51ee-701c-4ade-b829-88a74aab29a1",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mover",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "1D Axis",
-                    "id": "e14e88fd-ce12-496f-9956-2b5da837d88c",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Mover",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "39ed3002-10e8-46d8-b896-9bda1ca554be",
+                    "name": "up",
+                    "id": "69b2cc41-8c96-446e-95e2-187ac261a694",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard-Mouse",
                     "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "positive",
-                    "id": "39a94ea6-18a5-46c6-a587-fde2739fed72",
+                    "name": "down",
+                    "id": "0b4aedae-12dc-40af-8949-d00a16c09189",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard-Mouse",
+                    "action": "Mover",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "a47e4a30-c93f-4681-aa5e-eda12816cfaa",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard-Mouse",
+                    "action": "Mover",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "e0f0eb7b-593c-4f65-ac72-c16b5be958db",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": ";Keyboard-Mouse",
                     "action": "Mover",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -158,5 +147,33 @@
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "Joystick",
+            "bindingGroup": "Joystick",
+            "devices": [
+                {
+                    "devicePath": "<Joystick>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Keyboard-Mouse",
+            "bindingGroup": "Keyboard-Mouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }
