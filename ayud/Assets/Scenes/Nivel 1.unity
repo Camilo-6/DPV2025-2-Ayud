@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 392696109}
   - component: {fileID: 392696108}
   - component: {fileID: 392696110}
+  - component: {fileID: 392696111}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -1032,6 +1033,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15aebb5f3f1b6ee4b8f1175a8a7a2091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &392696111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 392696099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5912617966837c4e89e9bbfdada303d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <capaPiso>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 64
+  <posicionRayo>k__BackingField: {x: -0.39, y: -0.42}
+  <distanciaRayo>k__BackingField: 0.22
+  <fuerzaSalto>k__BackingField: 5
 --- !u!1 &418189312
 GameObject:
   m_ObjectHideFlags: 0
@@ -9823,9 +9842,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1892251888}
   - component: {fileID: 1892251887}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ColliderPiso
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10116,7 +10135,7 @@ GameObject:
   - component: {fileID: 1976716929}
   m_Layer: 6
   m_Name: Piso
-  m_TagString: Untagged
+  m_TagString: Piso
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
