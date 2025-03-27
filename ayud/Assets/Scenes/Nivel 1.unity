@@ -930,6 +930,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: b892d7c7-a21b-4194-be48-703088ac13d4
     m_ActionName: 'Jugador/Mover[/Keyboard/a,/Keyboard/s,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 392696110}
+        m_TargetAssemblyTypeName: ControladorJugador, Assembly-CSharp
+        m_MethodName: Saltar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f18b8b96-4eb4-4542-b20a-ce6b143e9249
+    m_ActionName: 'Jugador/Saltar[/Keyboard/space]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard-Mouse
   m_DefaultActionMap: Jugador
@@ -1049,7 +1065,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   <posicionRayo>k__BackingField: {x: -0.39, y: -0.42}
-  <distanciaRayo>k__BackingField: 0.22
+  <distanciaRayo>k__BackingField: 0.3
   <fuerzaSalto>k__BackingField: 5
 --- !u!1 &418189312
 GameObject:
