@@ -9,9 +9,9 @@ public class MovimientoX : MonoBehaviour
     // Velocidad maxima
     [field: SerializeField, Header("Velocidad maxima"), Tooltip("Controla velocidad maximo en eje x")] private float velocidadMaxima { get; set; }
     // Velocidad actual
-    private float velocidadActual { get; set; }
+    [SerializeField] private float velocidadActual { get; set; }
     // Direccion en X
-    private float direccionX { get; set; }
+    [SerializeField] private float direccionX { get; set; }
 
     void Awake()
     {
